@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Affine</h1>
+    <form class="affine_form" action="{{ url_for('index') }}" method="post">
+    
+        <label for="plaintext_affine">Plaintext : </label><br />
+        <textarea 
+            name="plaintext_affine" 
+            id="plaintext_affine" 
+            cols="30" 
+            rows="10"
+            required
+        >
+        </textarea><br>
+
+        <label for="m_affine">m : </label><br />
+        <input
+          type="number"
+          id="m_affine"
+          name="m_affine"
+          required
+        /><br />
+
+        <label for="b_affine">b : </label><br />
+        <input
+          type="number"
+          id="b_affine"
+          name="b_affine"
+          required
+        /><br />
+
+        <input 
+            type="radio" 
+            id="encrypt" 
+            name="operation_affine" 
+            value="encrypt"
+            required
+        >
+        <label for="encrypt">Encrypt</label>
+        <br>
+        <input 
+            type="radio" 
+            id="decrypt" 
+            name="operation_affine" 
+            value="decrypt"
+            required
+        >
+        <label for="decrypt">Decrypt</label>
+        
+
+        <br /><button type="submit" value="Submit">Calculate</button>
+      </form>
+</body>
+</html>

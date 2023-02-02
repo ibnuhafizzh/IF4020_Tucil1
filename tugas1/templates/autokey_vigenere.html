@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Auto-key Vigenere Ciphere</h1>
+        <br>
+        <form class="autokey_vigenere_form" action="{{ url_for('index') }}" method="post">
+    
+            <label for="plaintext_autokey_vigenere">Plaintext : </label><br />
+            <textarea 
+                name="plaintext_autokey_vigenere" 
+                id="plaintext_autokey_vigenere" 
+                cols="30" 
+                rows="10"
+                required
+            >
+            </textarea><br>
+    
+            <label for="key__autokey_vigenere">Key : </label><br />
+            <input
+              type="text"
+              id="key__autokey_vigenere"
+              name="key__autokey_vigenere"
+              required
+            /><br />
+    
+            <input 
+                type="radio" 
+                id="encrypt" 
+                name="operation_autokey_vigenere" 
+                value="encrypt"
+                required
+            >
+            <label for="encrypt">Encrypt</label>
+            <br>
+            <input 
+                type="radio" 
+                id="decrypt" 
+                name="operation_autokey_vigenere" 
+                value="decrypt"
+                required
+            >
+            <label for="decrypt">Decrypt</label>
+            
+    
+            <br /><button type="submit" value="Submit">Calculate</button>
+          </form>
+    </div>
+</body>
+</html>
