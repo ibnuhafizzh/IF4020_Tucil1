@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="lala"><h1>vigenere</h1></div>
+    <div>
+      <form
+        class="predict-form"
+        action="{{ url_for('vigenere') }}"
+        method="post"
+      >
+        <label for="plaintext">plain text : </label><br />
+        <input type="text" id="plaintext" name="plaintext" required /><br />
+        <label for="cipherkey">key : </label><br /><br />
+        <input
+          type="text"
+          id="cipherkey"
+          name="cipherkey"
+          required
+        /><br /><br />
+        <button class="encrypt_btn" type="submit" value="Submit">
+          encrypted
+        </button>
+      </form>
+      <div>{{text}}</div>
+      <h3>{{cipher}}</h3>
+    </div>
+  </body>
+</html>
