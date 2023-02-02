@@ -44,13 +44,13 @@ def ext_vigenere():
 def playfair():
     return render_template('playfair.html')
 
-@app.route('/affine', methods=['GET', 'POST'])
+@app.route('/autokey_vigenere', methods=['GET', 'POST'])
 def affine():
-    return render_template('affine.html')
+    return render_template('autokey_vigenere.html')
 
-@app.route('/playfair', methods=['GET', 'POST'])
+@app.route('/affine', methods=['GET', 'POST'])
 def playfair():
-    return render_template('playfair.html')
+    return render_template('affine.html')
 
 @app.route('/hill', methods=['GET', 'POST'])
 def hill():
