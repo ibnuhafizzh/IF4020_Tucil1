@@ -23,6 +23,14 @@
       <button
         class="check_btn"
         role="button"
+        onclick="location.href='{{ url_for('autokey_vigenere') }}'"
+      >
+        auto-key vigenere cipher
+      </button>
+
+      <button
+        class="check_btn"
+        role="button"
         onclick="location.href='{{ url_for('ext_vigenere') }}'"
       >
         Extended vigenere cipher
@@ -31,9 +39,25 @@
       <button
         class="check_btn"
         role="button"
+        onclick="location.href='{{ url_for('affine') }}'"
+      >
+        affine cipher
+      </button>
+
+      <button
+        class="check_btn"
+        role="button"
         onclick="location.href='{{ url_for('playfair') }}'"
       >
         playfair cipher
+      </button>
+
+      <button
+        class="check_btn"
+        role="button"
+        onclick="location.href='{{ url_for('hill') }}'"
+      >
+        hill cipher
       </button>
     </div>
   </body>
