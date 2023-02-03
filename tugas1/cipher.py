@@ -24,7 +24,6 @@ def vigenere_cip(text, key, mode):
 def extended_vigenere(text, key, mode):
     result = ""
     key_index = 0
-    text = clean_text(text)
     for char in text:
         char_code = ord(char)
         key_code = ord(key[key_index % len(key)])
@@ -159,6 +158,8 @@ def encrypt_playfair(key, plaintext):
     
     key = key.upper()
     plaintext = plaintext.upper()
+    
+    plaintext = clean_text(plaintext)
     # prepare the matrix
     key = key.replace("J","I")
     
@@ -200,6 +201,7 @@ def decrypt_playfair(key, ciphertext):
     ciphertext = ciphertext.upper()
     key = key.replace("J","I")
     
+    ciphertext = clean_text(ciphertext)
     ciphertext = ciphertext.replace("J","I")
     matrix = playfair_matrix(key)
     

@@ -47,6 +47,53 @@
         </button>
         <br />
       </form>
+    </div>
+    <div>
+      <br /><br />
+      <h2>using file upload</h2>
+      <form
+        class="predict-form"
+        action="{{ url_for('playfair') }}"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="file" />
+        <input
+          type="submit"
+          value="plaintext"
+          name="plaintext_file"
+        /><br /><br />
+        <label for="cipherkey">key : </label><br /><br />
+        <input
+          type="text"
+          id="cipherkey"
+          name="cipherkey"
+          required
+        /><br /><br />
+
+        <input
+          type="radio"
+          id="encrypt"
+          name="operation"
+          value="encrypt__input"
+          required
+        />
+        <label for="encrypt">Encrypt</label>
+        <br />
+        <input
+          type="radio"
+          id="decrypt"
+          name="operation"
+          value="decrypt__input"
+          required
+        />
+        <label for="decrypt">Decrypt</label>
+        <br />
+        <button class="transform_btn" type="submit" value="Submit">
+          transform using playfair
+        </button>
+        <br />
+      </form>
       <div>{{text}}</div>
       <h3>{{cipher}}</h3>
     </div>
