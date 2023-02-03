@@ -7,6 +7,47 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hill Cipher</h1>
+    <div>
+        <h1>Hill Ciphere</h1>
+        <br>
+        <form class="hill_form" action="{{ url_for('hill') }}" method="post">
+    
+        <label for="plaintext">input text : </label><br />
+        <input type="text" id="plaintext" name="plaintext" required /><br />
+    
+            <label for="key_hill_vigenere">Key : </label><br />
+            <textarea
+              type="text"
+              id="key_hill_vigenere"
+              name="key_hill_vigenere"
+              rows="30"
+              cols="50"
+              required
+            ></textarea><br />
+    
+            <input 
+                type="radio" 
+                id="encrypt" 
+                name="operation_hill" 
+                value="encrypt__input"
+                required
+            >
+            <label for="encrypt">Encrypt</label>
+            <br>
+            <input 
+                type="radio" 
+                id="decrypt" 
+                name="operation_hill" 
+                value="decrypt__input"
+                required
+            >
+            <label for="decrypt">Decrypt</label>
+            
+    
+            <br /><button type="submit" value="Submit">Calculate</button>
+        </form>
+        <div>{{text}}</div>
+        <h3>{{cipher}}</h3>
+    </div>
 </body>
 </html>
