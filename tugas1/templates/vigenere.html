@@ -14,7 +14,7 @@
         action="{{ url_for('vigenere') }}"
         method="post"
       >
-        <label for="plaintext">plain text : </label><br />
+        <label for="plaintext">input text : </label><br />
         <input type="text" id="plaintext" name="plaintext" required /><br />
         <label for="cipherkey">key : </label><br /><br />
         <input
@@ -23,9 +23,29 @@
           name="cipherkey"
           required
         /><br /><br />
-        <button class="encrypt_btn" type="submit" value="Submit">
-          encrypted
+
+        <input
+          type="radio"
+          id="encrypt"
+          name="operation"
+          value="encrypt__input"
+          required
+        />
+        <label for="encrypt">Encrypt</label>
+        <br />
+        <input
+          type="radio"
+          id="decrypt"
+          name="operation"
+          value="decrypt__input"
+          required
+        />
+        <label for="decrypt">Decrypt</label>
+        <br />
+        <button class="transform_btn" type="submit" value="Submit">
+          transform using vigenere
         </button>
+        <br />
       </form>
       <div>{{text}}</div>
       <h3>{{cipher}}</h3>

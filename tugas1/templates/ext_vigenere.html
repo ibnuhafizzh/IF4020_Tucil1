@@ -7,6 +7,48 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="lala">extended vigenere</div>
+    <div class="lala"><h1>extended vigenere</h1></div>
+    <div>
+      <form
+        class="predict-form"
+        action="{{ url_for('ext_vigenere') }}"
+        method="post"
+      >
+        <label for="plaintext">input text : </label><br />
+        <input type="text" id="plaintext" name="plaintext" required /><br />
+        <label for="cipherkey">key : </label><br /><br />
+        <input
+          type="text"
+          id="cipherkey"
+          name="cipherkey"
+          required
+        /><br /><br />
+
+        <input
+          type="radio"
+          id="encrypt"
+          name="operation"
+          value="encrypt__input"
+          required
+        />
+        <label for="encrypt">Encrypt</label>
+        <br />
+        <input
+          type="radio"
+          id="decrypt"
+          name="operation"
+          value="decrypt__input"
+          required
+        />
+        <label for="decrypt">Decrypt</label>
+        <br />
+        <button class="transform_btn" type="submit" value="Submit">
+          transform using extended vigenere
+        </button>
+        <br />
+      </form>
+      <div>{{text}}</div>
+      <h3>{{cipher}}</h3>
+    </div>
   </body>
 </html>
