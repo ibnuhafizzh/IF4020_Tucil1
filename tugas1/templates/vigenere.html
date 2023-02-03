@@ -4,98 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/cipher.css')}}"
+    />
     <title>Document</title>
   </head>
   <body>
     <div class="lala"><h1>vigenere</h1></div>
-    <div>
-      <form
-        class="predict-form"
-        action="{{ url_for('vigenere') }}"
-        method="post"
-      >
-        <label for="plaintext">input text : </label><br />
-        <input type="text" id="plaintext" name="plaintext" required /><br />
-        <label for="cipherkey">key : </label><br /><br />
-        <input
-          type="text"
-          id="cipherkey"
-          name="cipherkey"
-          required
-        /><br /><br />
 
-        <input
-          type="radio"
-          id="encrypt"
-          name="operation"
-          value="encrypt__input"
-          required
-        />
-        <label for="encrypt">Encrypt</label>
-        <br />
-        <input
-          type="radio"
-          id="decrypt"
-          name="operation"
-          value="decrypt__input"
-          required
-        />
-        <label for="decrypt">Decrypt</label>
-        <br />
-        <button class="transform_btn" type="submit" value="Submit">
-          transform using vigenere
-        </button>
-        <br />
-      </form>
-    </div>
-    <div>
-      <br /><br />
-      <h2>using file upload</h2>
-      <form
-        class="predict-form"
-        action="{{ url_for('vigenere') }}"
-        method="post"
-        enctype="multipart/form-data"
-      >
-        <input type="file" name="file" />
-        <input
-          type="submit"
-          value="plaintext"
-          name="plaintext_file"
-        /><br /><br />
-        <label for="cipherkey">key : </label><br /><br />
-        <input
-          type="text"
-          id="cipherkey"
-          name="cipherkey"
-          required
-        /><br /><br />
+    <div class="all_container">
+      <div>
+        <form
+          class="predict-form"
+          action="{{ url_for('vigenere') }}"
+          method="post"
+        >
+          <label for="plaintext">input text : </label><br />
+          <input type="text" id="plaintext" name="plaintext" required /><br />
+          <label for="cipherkey">key : </label><br /><br />
+          <input
+            type="text"
+            id="cipherkey"
+            name="cipherkey"
+            required
+          /><br /><br />
 
-        <input
-          type="radio"
-          id="encrypt"
-          name="operation"
-          value="encrypt__input"
-          required
-        />
-        <label for="encrypt">Encrypt</label>
-        <br />
-        <input
-          type="radio"
-          id="decrypt"
-          name="operation"
-          value="decrypt__input"
-          required
-        />
-        <label for="decrypt">Decrypt</label>
-        <br />
-        <button class="transform_btn" type="submit" value="Submit">
-          transform using vigenere
-        </button>
-        <br />
-      </form>
-      <div>{{text}}</div>
-      <h3>{{cipher}}</h3>
+          <input
+            type="radio"
+            id="encrypt"
+            name="operation"
+            value="encrypt__input"
+            required
+          />
+          <label for="encrypt">Encrypt</label>
+          <br />
+          <input
+            type="radio"
+            id="decrypt"
+            name="operation"
+            value="decrypt__input"
+            required
+          />
+          <label for="decrypt">Decrypt</label>
+          <br />
+          <button class="transform_btn" type="submit" value="Submit">
+            transform using vigenere
+          </button>
+          <br />
+        </form>
+      </div>
+      <div>
+        <div>using file upload</div>
+        <form
+          class="predict-form"
+          action="{{ url_for('vigenere') }}"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input type="file" name="file" />
+          <input
+            type="submit"
+            value="plaintext"
+            name="plaintext_file"
+          /><br /><br />
+          <label for="cipherkey">key : </label><br /><br />
+          <input
+            type="text"
+            id="cipherkey"
+            name="cipherkey"
+            required
+          /><br /><br />
+
+          <input
+            type="radio"
+            id="encrypt"
+            name="operation"
+            value="encrypt__input"
+            required
+          />
+          <label for="encrypt">Encrypt</label>
+          <br />
+          <input
+            type="radio"
+            id="decrypt"
+            name="operation"
+            value="decrypt__input"
+            required
+          />
+          <label for="decrypt">Decrypt</label>
+          <br />
+          <button class="transform_btn" type="submit" value="Submit">
+            transform using vigenere
+          </button>
+          <br />
+        </form>
+      </div>
+      <div>
+        <div>{{text}}</div>
+        <h3>{{cipher}}</h3>
+      </div>
     </div>
   </body>
 </html>

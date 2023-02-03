@@ -213,3 +213,8 @@ input {
 .doc_png {
   width: 100%;
 }
+
+.all__container {
+  display: flex;
+  flex-direction: row;
+}

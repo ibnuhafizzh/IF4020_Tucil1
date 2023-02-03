@@ -58,8 +58,10 @@ def vigenere():
             # print(arr_input, file=sys.stdout)
             if type_trans=="encrypt__input":
                 ciphered = vigenere_cip(inputs[0], inputs[1], 'encrypt')
+                
             elif type_trans=="decrypt__input":
                 ciphered = vigenere_cip(inputs[0], inputs[1], 'decrypt')
+            ciphered = split_five(ciphered)
             # print(pred, file=sys.stdout)
         else:
             uploaded_file = request.files['file']
@@ -81,6 +83,7 @@ def vigenere():
             elif type_trans=="decrypt__input":
                 ciphered = vigenere_cip(inputs[0], inputs[1], 'decrypt')
             # print(pred, file=sys.stdout)
+            ciphered = split_five(ciphered)
     return redirect(url_for('vigenere'))
 
 @app.route('/ext_vigenere', methods=['GET', 'POST'])
@@ -122,6 +125,7 @@ def ext_vigenere():
             elif type_trans=="decrypt__input":
                 ciphered = extended_vigenere(inputs[0], inputs[1], 'decrypt')
             # print(pred, file=sys.stdout)
+            ciphered = split_five(ciphered)
         else:
             uploaded_file = request.files['file']
             filename = uploaded_file.filename
@@ -142,6 +146,7 @@ def ext_vigenere():
             elif type_trans=="decrypt__input":
                 ciphered = extended_vigenere(inputs[0], inputs[1], 'decrypt')
             # print(pred, file=sys.stdout)
+            ciphered = split_five(ciphered)
     return redirect(url_for('ext_vigenere'))
 
 
@@ -177,7 +182,7 @@ def playfair():
                     inputs.append(value)
                 else:
                     type_trans = value
-            print("wkwk", inputs, file=sys.stderr)
+            # print("wkwk", inputs, file=sys.stderr)
             
             # print(arr_input, file=sys.stdout)
             if type_trans=="encrypt__input":
@@ -185,6 +190,7 @@ def playfair():
             elif type_trans=="decrypt__input":
                 ciphered = decrypt_playfair(inputs[1], inputs[0])
             # print(pred, file=sys.stdout)
+            ciphered = split_five(ciphered)
         else:
             uploaded_file = request.files['file']
             filename = uploaded_file.filename
@@ -205,6 +211,7 @@ def playfair():
             elif type_trans=="decrypt__input":
                 ciphered = decrypt_playfair(inputs[1], inputs[0])
             # print(pred, file=sys.stdout)
+            ciphered = split_five(ciphered)
     return redirect(url_for('playfair'))
 
 @app.route('/autokey_vigenere', methods=['GET', 'POST'])
@@ -241,6 +248,7 @@ def autokey_vigenere():
         elif type_trans=="decrypt__input":
             ciphered = autokey_vigenere_cip(inputs[0], inputs[1], 'decrypt')
         # print(pred, file=sys.stdout)
+        ciphered = split_five(ciphered)
     return redirect(url_for('autokey_vigenere'))
 
 @app.route('/affine', methods=['GET', 'POST'])
@@ -277,6 +285,7 @@ def affine():
         elif type_trans=="decrypt__input":
             ciphered = affine_cipher(inputs[0], int(inputs[1]), int(inputs[2]), 'decrypt')
         # print(pred, file=sys.stdout)
+        ciphered = split_five(ciphered)
     return redirect(url_for('affine'))
 
 @app.route('/hill', methods=['GET', 'POST'])
@@ -313,6 +322,7 @@ def hill():
         elif type_trans=="decrypt__input":
             ciphered = hill_cipher(inputs[0], inputs[1], 'decrypt')
         # print(pred, file=sys.stdout)
+        ciphered = split_five(ciphered)
     return redirect(url_for('hill'))
 
 
