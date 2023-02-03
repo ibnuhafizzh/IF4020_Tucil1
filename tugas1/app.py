@@ -57,7 +57,7 @@ def ext_vigenere():
         print(inputs)
 
         # print(arr_input, file=sys.stdout)
-        ciphered = extended_vignere(inputs[0], inputs[1], 'encrypt')
+        ciphered = extended_vigenere(inputs[0], inputs[1], 'encrypt')
         # print(pred, file=sys.stdout)
     return redirect(url_for('ext_vigenere'))
 
