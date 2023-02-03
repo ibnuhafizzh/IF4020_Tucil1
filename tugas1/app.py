@@ -197,7 +197,39 @@ def affine():
 
 @app.route('/hill', methods=['GET', 'POST'])
 def hill():
-    return render_template('hill.html')
+    if (request.method == 'GET'):
+        global type_trans
+        global ciphered
+        if ciphered!="" and type_trans=="encrypt__input":
+            teks = "hasil enkripsi : "
+            return render_template("hill.html", cipher=ciphered, text = teks)
+        elif ciphered!="" and type_trans=="decrypt__input":
+            teks = "hasil dekripsi : "
+            return render_template("hill.html", cipher=ciphered, text = teks)
+        else:
+            teks=""
+            return render_template("hill.html", cipher="", text= teks)
+    
+    if (request.method == 'POST'):
+        inputs = []
+        res = request.form.to_dict()
+        print(res.items(), file=sys.stderr)
+        for key, value in res.items():
+            if value!="encrypt__input" and value!="decrypt__input":
+                inputs.append(value)
+            else:
+                type_trans = value
+        
+        print(inputs, file=sys.stderr)
+        
+        print(type_trans, file=sys.stderr)
+        # print(arr_input, file=sys.stdout)
+        if type_trans=="encrypt__input":
+            ciphered = hill_cipher(inputs[0], inputs[1], 'encrypt')
+        elif type_trans=="decrypt__input":
+            ciphered = hill_cipher(inputs[0], inputs[1], 'decrypt')
+        # print(pred, file=sys.stdout)
+    return redirect(url_for('hill'))
 
 
 
