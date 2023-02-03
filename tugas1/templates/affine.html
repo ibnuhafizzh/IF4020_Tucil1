@@ -8,17 +8,10 @@
 </head>
 <body>
     <h1>Affine</h1>
-    <form class="affine_form" action="{{ url_for('index') }}" method="post">
+    <form class="affine_form" action="{{ url_for('affine') }}" method="post">
     
-        <label for="plaintext_affine">Plaintext : </label><br />
-        <textarea 
-            name="plaintext_affine" 
-            id="plaintext_affine" 
-            cols="30" 
-            rows="10"
-            required
-        >
-        </textarea><br>
+      <label for="plaintext">input text : </label><br />
+      <input type="text" id="plaintext" name="plaintext" required /><br />
 
         <label for="m_affine">m : </label><br />
         <input
@@ -40,7 +33,7 @@
             type="radio" 
             id="encrypt" 
             name="operation_affine" 
-            value="encrypt"
+            value="encrypt__input"
             required
         >
         <label for="encrypt">Encrypt</label>
@@ -49,7 +42,7 @@
             type="radio" 
             id="decrypt" 
             name="operation_affine" 
-            value="decrypt"
+            value="decrypt__input"
             required
         >
         <label for="decrypt">Decrypt</label>
@@ -57,5 +50,7 @@
 
         <br /><button type="submit" value="Submit">Calculate</button>
       </form>
+      <div>{{text}}</div>
+      <h3>{{cipher}}</h3>
 </body>
 </html>

@@ -10,23 +10,16 @@
     <div>
         <h1>Auto-key Vigenere Ciphere</h1>
         <br>
-        <form class="autokey_vigenere_form" action="{{ url_for('index') }}" method="post">
+        <form class="autokey_vigenere_form" action="{{ url_for('autokey_vigenere') }}" method="post">
     
-            <label for="plaintext_autokey_vigenere">Plaintext : </label><br />
-            <textarea 
-                name="plaintext_autokey_vigenere" 
-                id="plaintext_autokey_vigenere" 
-                cols="30" 
-                rows="10"
-                required
-            >
-            </textarea><br>
+        <label for="plaintext">input text : </label><br />
+        <input type="text" id="plaintext" name="plaintext" required /><br />
     
             <label for="key__autokey_vigenere">Key : </label><br />
             <input
               type="text"
-              id="key__autokey_vigenere"
-              name="key__autokey_vigenere"
+              id="key_autokey_vigenere"
+              name="key_autokey_vigenere"
               required
             /><br />
     
@@ -34,7 +27,7 @@
                 type="radio" 
                 id="encrypt" 
                 name="operation_autokey_vigenere" 
-                value="encrypt"
+                value="encrypt__input"
                 required
             >
             <label for="encrypt">Encrypt</label>
@@ -43,14 +36,16 @@
                 type="radio" 
                 id="decrypt" 
                 name="operation_autokey_vigenere" 
-                value="decrypt"
+                value="decrypt__input"
                 required
             >
             <label for="decrypt">Decrypt</label>
             
     
             <br /><button type="submit" value="Submit">Calculate</button>
-          </form>
+        </form>
+        <div>{{text}}</div>
+        <h3>{{cipher}}</h3>
     </div>
 </body>
 </html>
